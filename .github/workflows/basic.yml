@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -12,19 +12,8 @@ jobs:
     - name: build
       run: make build
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-
     - name: test
       run: make test
 
-  install:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-
     - name: setup
       run: make install
-

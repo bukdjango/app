@@ -3,10 +3,10 @@ build:
 	docker build --tag=test .
 
 test:
-	docker run --rm -it test python ./runtests.py
+	docker run --rm test python ./runtests.py
 
 install:
-	docker run --rm -it test pip install .
+	docker run --rm test pip install .
 
 
 suite: build test install
